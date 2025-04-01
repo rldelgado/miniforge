@@ -41,6 +41,20 @@ specs:
   - conda-libmamba-solver {{ conda_libmamba_solver_version }}
   - pip
   - miniforge_console_shortcut 1.*  # [win]
+  - ipython
+  - jupyter
+  - jupyterlab
+  - matplotlib
+  - networkx
+  - numpy
+  - pandas
+  - pylatexenc
+  - pygraphviz
+  - scipy
+  - spyder
+  - qiskit
+  - qiskit-aer
+  - qiskit-ibm-runtime
 
 virtual_specs:
   - __glibc >=2.17 # [linux]
