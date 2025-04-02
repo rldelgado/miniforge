@@ -5,9 +5,9 @@
 #   - `MAMBA_VERSION` in `scripts/test.sh`
 {% set mamba_version = "2.0.8" %}
 
-name: Miniforge3
+name: IQC-Miniforge3
 version: {{ version }}
-company: conda-forge
+company: Rafael Delgado
 
 channels:
   # specifying the channel with the full URL adds two channels
