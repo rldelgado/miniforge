@@ -81,15 +81,15 @@ if [[ "$(uname)" == MINGW* ]]; then
 else
    EXT="sh";
 fi
-# This line will break if there is more than one installer in the folder.
-INSTALLER_PATH=$(find . -name "M*forge*.${EXT}" | head -n 1)
-HASH_PATH="${INSTALLER_PATH}.sha256"
-sha256sum "${INSTALLER_PATH}" > "${HASH_PATH}"
+# # This line will break if there is more than one installer in the folder.
+# INSTALLER_PATH=$(find . -name "M*forge*.${EXT}" | head -n 1)
+# HASH_PATH="${INSTALLER_PATH}.sha256"
+# sha256sum "${INSTALLER_PATH}" > "${HASH_PATH}"
 
 echo "***** Move installer and hash to build folder *****"
 mkdir -p "${CONSTRUCT_ROOT}/build"
 mv "${INSTALLER_PATH}" "${CONSTRUCT_ROOT}/build/"
-mv "${HASH_PATH}" "${CONSTRUCT_ROOT}/build/"
+# mv "${HASH_PATH}" "${CONSTRUCT_ROOT}/build/"
 
 echo "***** Done: Building Miniforge installer *****"
 cd "${CONSTRUCT_ROOT}"
