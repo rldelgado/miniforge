@@ -82,7 +82,7 @@ else
    EXT="sh";
 fi
 # # This line will break if there is more than one installer in the folder.
-INSTALLER_PATH=$(find . -name "*M*forge*.${EXT}" | head -n 1)
+INSTALLER_PATH=$(find . -name "IQC-M*forge*.${EXT}" | head -n 1)
 HASH_PATH="${INSTALLER_PATH}.sha256"
 sha256sum "${INSTALLER_PATH}" > "${HASH_PATH}"
 
@@ -96,5 +96,5 @@ cd "${CONSTRUCT_ROOT}"
 
 # copy the installer for latest
 if [[ "${OS_NAME:-}" != "" && "${ARCH:-}" != "" ]]; then
-  cp "${CONSTRUCT_ROOT}/build/Miniforge3-"*"-${OS_NAME}-${ARCH}.${EXT}" "${CONSTRUCT_ROOT}/build/Miniforge3-${OS_NAME}-${ARCH}.${EXT}"
+  cp "${CONSTRUCT_ROOT}/build/IQC-Miniforge3-"*"-${OS_NAME}-${ARCH}.${EXT}" "${CONSTRUCT_ROOT}/build/IQC-Miniforge3-${OS_NAME}-${ARCH}.${EXT}"
 fi
