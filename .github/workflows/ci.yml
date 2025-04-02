@@ -3,7 +3,7 @@ on: [ push, pull_request ]
 
 jobs:
   build:
-    name: Miniforge3-${{ matrix.OS_NAME }}-${{ matrix.ARCH }}
+    name: IQC-Miniforge3-${{ matrix.OS_NAME }}-${{ matrix.ARCH }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -92,9 +92,9 @@ jobs:
             source build_miniforge_win.sh;
           fi
           # Copy for latest release
-          cp build/Miniforge3-*-$OS_NAME-$ARCH.$EXT build/Miniforge3-$OS_NAME-$ARCH.$EXT
+          cp build/IQC-Miniforge3-*-$OS_NAME-$ARCH.$EXT build/IQC-Miniforge3-$OS_NAME-$ARCH.$EXT
           if [[ "$OS_NAME" == "MacOSX" ]]; then
-            cp build/Miniforge3-*-$OS_NAME-$ARCH.$EXT build/Miniforge3-Darwin-$ARCH.$EXT
+            cp build/IQC-Miniforge3-*-$OS_NAME-$ARCH.$EXT build/IQC-Miniforge3-Darwin-$ARCH.$EXT
           fi
           ls -alh build
         shell: bash
@@ -103,8 +103,8 @@ jobs:
         if: always()
         uses: actions/upload-artifact@4cec3d8aa04e39d1a68397de0c4cd6fb9dce8ec1 # v4.6.1
         with:
-          path: build/Miniforge3-${{ matrix.OS_NAME }}-${{ matrix.ARCH }}*
-          name: Miniforge3-${{ matrix.OS_NAME }}-${{ matrix.ARCH }}
+          path: build/IQC-Miniforge3-${{ matrix.OS_NAME }}-${{ matrix.ARCH }}*
+          name: IQC-Miniforge3-${{ matrix.OS_NAME }}-${{ matrix.ARCH }}
 
       - name: Upload miniforge to release
         uses: svenstaro/upload-release-action@04733e069f2d7f7f0b4aebc4fbdbce8613b03ccd # v2.9.0
